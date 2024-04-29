@@ -17,3 +17,4 @@ public class ShoeShopManagementSystemApplication {
         SpringApplication.run(ShoeShopManagementSystemApplication.class, args);
     }
 }
+

@@ -1,6 +1,8 @@
 package lk.ijse.gdse65.shoeshopmanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.gdse65.shoeshopmanagementsystem.dto.enums.Gender;
+import lk.ijse.gdse65.shoeshopmanagementsystem.dto.enums.Level;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,10 +20,10 @@ public class CustomerEntity implements SuperEntity{
     private String customerCode;
     private String customerName;
     @Enumerated(EnumType.STRING)
-    private String gender;
+    private Gender gender;
     private Date joinDate;
     @Enumerated(EnumType.STRING)
-    private String level;
+    private Level level;
     private Integer totalPoints;
     private Date dob;
     private String addressLine01;
@@ -31,5 +33,5 @@ public class CustomerEntity implements SuperEntity{
     private String addressLine05;
     private String contactNo;
     private String email;
-    private Timestamp RecentPurchaseDate;
+    private Timestamp recentPurchaseDate;
 }
