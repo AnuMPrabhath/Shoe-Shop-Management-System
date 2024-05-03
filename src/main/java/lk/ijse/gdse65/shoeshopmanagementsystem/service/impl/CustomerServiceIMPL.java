@@ -59,4 +59,11 @@ public class CustomerServiceIMPL implements CustomerService {
             existCustomer.setRecentPurchaseDate(customerDTO.getRecentPurchaseDate());
         }
     }
+
+    private String getNextCustomerCode() {
+        CustomerEntity firstByOrderByCustomerCodeDesc = repo.findFirstByOrderByCustomerCodeDesc();
+        return (firstByOrderByCustomerCodeDesc != null)
+                ? String.format("Cust-%03d",
+                Integer.parseInt(firstByOrderByCustomerCodeDesc.getCustomerCode().replace("Cust-", "")) + 1) : "Cust-001";
+    }
 }
