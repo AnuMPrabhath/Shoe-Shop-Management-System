@@ -1,7 +1,9 @@
 package lk.ijse.gdse65.shoeshopmanagementsystem.util;
 
 import lk.ijse.gdse65.shoeshopmanagementsystem.dto.CustomerDTO;
+import lk.ijse.gdse65.shoeshopmanagementsystem.dto.EmployeeDTO;
 import lk.ijse.gdse65.shoeshopmanagementsystem.entity.CustomerEntity;
+import lk.ijse.gdse65.shoeshopmanagementsystem.entity.EmployeeEntity;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -22,5 +24,17 @@ public class Mapping {
     }
     public List<CustomerDTO> toCustomerDTOList(List<CustomerEntity> customers) {
         return mapper.map(customers, List.class);
+    }
+
+    public EmployeeDTO toEmployeeDTO(EmployeeEntity employee){
+        return mapper.map(employee, EmployeeDTO.class);
+    }
+
+    public EmployeeEntity toEmployeeEntity(EmployeeDTO employeeDTO){
+        return mapper.map(employeeDTO, EmployeeEntity.class);
+    }
+
+    public List<EmployeeDTO> toEmployeeDTOList(List<EmployeeEntity> entities){
+        return mapper.map(entities, List.class);
     }
 }
